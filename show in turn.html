@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+}
+.box {
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    margin: 100px auto;
+    position: relative;
+}
+img {
+    width: 600px;
+    height: 300px;
+    vertical-align: top;
+}
+ul {
+    width: 500%;
+    height: 300px;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+ul li {
+    float: left;
+}
+.btn span{
+     width: 30px;
+    height: 50px;
+    background: #4a4a4a;
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    opacity: 0.4;
+    cursor: pointer;
+}
+.btn span:hover{
+    opacity: 1;
+    color: #fff;
+}
+.btn .left{
+    left: 0;
+    top: 125px;
+}
+.btn .right{
+    right: 0;
+    top: 125px;
+}
+ol{
+    position: absolute;
+    bottom: 20px;
+    left: 40%;
+    list-style: none;
+}
+ol li{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    float: left;
+    margin: 0 4px;
+}
+</style>
+
+<body>
+    <div class="box" id="box">
+        <ul id="inner-box">
+            <li><img src="banner/banner1.jpg"></li>
+            <li><img src="banner/banner2.jpg"></li>
+            <li><img src="banner/banner3.jpg"></li>
+            <li><img src="banner/banner4.jpg"></li>
+            <li><img src="banner/banner1.jpg"></li>
+        </ul>
+        <ol id="ol">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+        <div class="btn">
+            <span class="left" id="left"></span>
+            <span class="right" id="right">></span>
+        </div>
+    </div>
+</body>
+<script src="showinturn.js"></script>
+</html>
+
