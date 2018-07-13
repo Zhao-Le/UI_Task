@@ -1,0 +1,207 @@
+.all{
+    margin: 0 auto;
+    width: 790px;
+    height: 340px;
+    border:1px solid black;
+    overflow: hidden;
+}
+input{
+    display: none;
+}
+ul{
+    width: 3950px;
+    height: 340px;
+    -webkit-animation: flash1 10s ease infinite;
+}
+li{
+    width: 790px;
+    height: 340px;
+    float: left;
+    list-style: none;
+    font-family: 微软雅黑;
+    font-size: 3em;
+    color: #ffffff;
+    text-align: center;
+    line-height: 340px;
+    position: relative;
+    top: -16.5px;
+    left: -40px;
+}
+label{
+    height: 15px;
+    width: 15px;
+    float: left;
+    border-radius: 15px;
+    margin: 10px;
+    background-color: #ffffff;
+    font-family: 微软雅黑;
+    font-size: 1.5em;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+}
+#four{
+    margin: auto;
+    height: 30px;
+    width: 180px;
+    border-radius: 10px;
+    line-height: 15px;
+    background-color:transparent;
+    position: relative;
+    top: -70px;
+}
+/* #radio1:clicked~.all #five{
+    -webkit-animation-name: none;
+    margin-left: 0px;
+}
+#radio2:clicked~.all #five{
+    -webkit-animation-name: none;
+    margin-left: -790px;
+}
+#radio3:clicked~.all #five{
+    -webkit-animation-name: none;
+    margin-left: -1580px;
+}
+#radio4:clicked~.all #five{
+    -webkit-animation-name: none;
+    margin-left: -2370px;
+}
+#radio5:clicked~.all #five{
+    -webkit-animation-name: none;
+    margin-left: -3160px;
+} */
+#radio1:checked~.all #five{
+    -webkit-animation-name: flash1;    
+}
+#radio2:checked~.all #five{
+    -webkit-animation-name: flash2;    
+}
+#radio3:checked~.all #five{
+    -webkit-animation-name: flash3;    
+}
+#radio4:checked~.all #five{
+    -webkit-animation-name: flash4;    
+}
+#radio5:checked~.all #five{
+    -webkit-animation-name: flash5;    
+}
+@-webkit-keyframes flash1{
+    0%{
+        margin-left: 0px;
+    }
+    20%{
+        margin-left: -790px;
+    }
+    40%{
+        margin-left: -1580px;
+    }
+    60%{
+        margin-left: -2370px;
+    }
+    80%{
+        margin-left: -3160px;
+    }
+    100%{
+        margin-left: 0px;
+    }
+}
+@-webkit-keyframes flash2{
+    0%{
+        margin-left: -790px;
+    }
+    20%{
+        margin-left: -1580px;
+    }
+    40%{
+        margin-left: -2370px;
+    }
+    60%{
+        margin-left: -3160px;
+    }
+    80%{
+        margin-left: 0px;
+    }
+    100%{
+        margin-left: -790px;
+    }
+}
+@-webkit-keyframes flash3{
+    0%{
+        margin-left: -1580px;
+    }
+    20%{
+        margin-left: -2370px;
+    }
+    40%{
+        margin-left: -3160px;
+    }
+    60%{
+        margin-left: 0px;
+    }
+    80%{
+        margin-left: -790px;
+    }
+    100%{
+        margin-left: -1580px;
+    }
+}
+@-webkit-keyframes flash4{
+    0%{
+        margin-left: -2370px;
+    }
+    20%{
+        margin-left: -3160px;
+    }
+    40%{
+        margin-left: 0px;
+    }
+    60%{
+        margin-left: -790px;
+    }
+    80%{
+        margin-left: -1580px;
+    }
+    100%{
+        margin-left: -3160px;
+    }
+}
+@-webkit-keyframes flash5{
+    0%{
+        margin-left: -3160px;
+    }
+    20%{
+        margin-left: -0px;
+    }
+    40%{
+        margin-left: -790px;
+    }
+    60%{
+        margin-left: -1580px;
+    }
+    80%{
+        margin-left: -2370px;
+    }
+    100%{
+        margin-left: -3160px;
+    }
+}
+#radio1:active~.all #five{
+    -webkit-animation-name: none;
+    margin-left: 0px;
+}
+#radio2:active~.all #five{
+    -webkit-animation-name: none;
+    margin-left: -790px;
+}
+#radio3:active~.all #five{
+    -webkit-animation-name: none;
+    margin-left: -1580px;
+}
+#radio4:active~.all #five{
+    -webkit-animation-name: none;
+    margin-left: -2370px;
+}
+#radio5:active~.all #five{
+    -webkit-animation-name: none;
+    margin-left: -3160px;
+}
