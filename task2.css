@@ -1,0 +1,898 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.all{
+    width: 1349px;
+    height: 4600px;
+    /* background-color: hotpink; */
+    margin: 0 auto;
+}
+.top1{
+    width: 100%;
+    height: 50px;
+    /* background-color: aqua; */
+}
+.smallshelf{
+    position: relative;
+    top: 7px;
+    left: 30px;
+}
+.newworld1{
+    position: relative;
+    left: 32px;
+}
+.topright1{
+    margin-left: 55.5%;
+    color: gray;
+    font-size: 14px;
+    transition: all 1s;
+}
+.topright2,
+.topright3,
+.topright4,
+.topright5{
+    margin-left: 2%;
+    color: gray;
+    font-size: 14px;
+    transition: all 1s;
+}
+.topright1:hover,
+.topright2:hover,
+.topright3:hover,
+.topright4:hover,
+.topright5:hover{
+    color: rgb(234, 111,110);
+    cursor: pointer;
+    transition: all 1s;
+}
+.kid{
+   position: relative;
+   left: 2%;
+   top: 4.5%;
+    
+}
+.login{
+    margin-left: 2%;
+    color: rgb(234, 111,110);
+    font-size: 14px;
+    cursor: pointer;
+}
+.shortline1{
+    width: 60px;
+    height:3px;
+    background-color: white;
+    position: relative;
+    left: 60.8%;
+    top: 23%;
+    transition: all 2s;
+}
+.shortline22{
+    width: 67px;
+    height:3px;
+    background-color: white;
+    position: relative;
+    left: 66%;
+    top: 17%;
+    transition: all 2s;
+}
+.shortline3{
+    width: 67px;
+    height:3px;
+    background-color: white;
+    position: relative;
+    left: 72.5%;
+    top: 12%;
+    transition: all 2s;
+}
+.shortline4{
+    width: 67px;
+    height:3px;
+    background-color: white;
+    position: relative;
+    left: 79%;
+    top: 5%;
+    transition: all 2s;
+}
+.shortline5{
+    width: 67px;
+    height:3px;
+    background-color: white;
+    position: relative;
+    left: 85.5%;
+    top: 0%;
+    transition: all 2s;
+}
+.topright1:hover~.shortline1,
+.topright2:hover~.shortline22,
+.topright3:hover~.shortline3,
+.topright4:hover~.shortline4,
+.topright5:hover~.shortline5{
+    background-color: rgb(234, 111,110);
+    transition: all 1.5s;
+}
+.top2all{
+    width: 100%;
+    height: 1000px;
+    /* background-color: antiquewhite; */
+}
+.pic1{
+    width: 100%;
+}
+.top2shelter{
+    width: 100%;
+    height: 900px;
+    background-color: rgb(0,0,0);
+    opacity: 0.5;
+    position: relative;
+    top: -90.3%;
+}
+.bigletters{
+    position: relative;
+    /* top: 60%; */
+    left: 10%;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+}
+.smallletters{
+    position: relative;
+    /* top: 22%; */
+    left: 11%;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+}
+.start{
+    width: 270px;
+    height: 50px;
+    background-color: rgb(232, 80,78);
+    /* display: inline; */
+    position: relative;
+    left: 10%;
+    top: 20%;
+    color: white;
+    cursor: pointer;
+    transition: all 1.5s;
+}
+.start2{
+    line-height: 50px;
+    margin: 0 auto;
+    position: relative;
+    left: 30%;
+    font-size: 25px;
+    /* transition: all 2s; */
+}
+.start:hover{
+    color: rgb(232, 80,78);
+    background-color: white;
+    transition: all 1.5s;
+}
+.pureletters{
+    width: 500px;
+    height: 300px;
+    /* background-color: blue; */
+    position: relative;
+    top: -154%;
+    left: 10%;
+}
+.top3{
+    width: 100%;
+    height: 306px;
+    /* background-color: blanchedalmond; */
+    position: relative;
+    top: -2.7%;
+}
+.top3-1{
+    width: 337px;
+    height: 306px;
+    display: inline;
+    float: left;
+    /* background-color: aqua; */
+}
+.top3-2{
+    width: 337px;
+    height: 306px;
+    display: inline;
+    float: left;
+    /* background-color: rgb(59, 32, 179); */
+}
+.top3-3{
+    width: 337px;
+    height: 306px;
+    display: inline;
+    float: left;
+    /* background-color: rgb(26, 29, 14); */
+}
+.top3-4{
+    width: 337px;
+    height: 306px;
+    display: inline;
+    float: left;
+    /* background-color: rgb(253, 125, 19); */
+}
+.circle{
+    position: relative;
+    left: 40%;
+    top: 20%;
+}
+.circleletter{
+    position: relative;
+    left: 6%;
+    top: 45%;
+    display: inline-block;
+    color: gray;
+}
+.shuline1{
+    width: 1.5px;
+    height: 50px;
+    background-color: gray;
+    position: relative;
+    left: 32%;
+    top: 50%;
+    display: inline-block;
+}
+.flag{
+    position: relative;
+    left: 40%;
+    top: 19%;
+}
+.flagletter{
+    position: relative;
+    left: 6%;
+    top: 44%;
+    display: inline-block;
+    color: gray;
+}
+.shuline2{
+    width: 1.5px;
+    height: 50px;
+    background-color: gray;
+    position: relative;
+    left: 33%;
+    top: 50%;
+    display: inline-block;
+}
+.flower{
+    position: relative;
+    left: 40%;
+    top: 18.2%;
+}
+.shuline3{
+    width: 1.5px;
+    height: 50px;
+    background-color: gray;
+    position: relative;
+    left: 33%;
+    top: 50%;
+    display: inline-block;
+}
+.square{
+    position: relative;
+    left: 40%;
+    top: 22%;
+}
+.squareletter{
+    position: relative;
+    left: 6%;
+    top: 47%;
+    display: inline-block;
+    color: gray;
+}
+.top4{
+    width: 100%;
+    height: 400px;
+    background-color: rgb(237, 237,237);
+    position: relative;
+    top: -3.7%;
+}
+.bigshelf{
+    width: 91px;
+    height: 92px;
+    /* background-color: aquamarine; */
+    position: relative;
+    top: 25%;
+    left: 48%;
+}
+.aboutworld{
+    font-size: 40px;
+    color: gray;
+    position: relative;
+    top: 35%;
+    left: 28%;
+}
+.top5{
+    width: 100%;
+    height: 337px;
+    position: relative;
+    top: -3.7%;
+    /* background-color: blue; */
+}
+.lookmap{
+    width: 100%;
+    height: 337px;
+    /* background-color: bisque; */
+    position: relative;   
+}
+.lookmap1{
+    width: 100%;
+}
+.shelter2{
+    width: 100%;
+    height: 353px;
+    /* display: inline;
+    float: left; */
+    position: relative;
+    top: -100%;
+}
+.findworld{
+    width: 300px;
+    height: 40px;
+    /* background-color: aqua; */
+    position: relative;
+    top: -180%;
+    left: 38%;
+}
+.findletter{
+    color: rgb(250, 246,248);
+    font-size: 27px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.findline{
+    width: 50px;
+    height: 2px;
+    background-color:rgb(255, 255, 255); 
+    position: relative;
+    top: -177%;
+    left: -1%;
+    transition: all 3s;
+    margin: auto;
+}
+.findworld:hover~.findline{
+    width: 300px;
+    transition: all 2s;
+}
+.belowfind{
+    width: 500px;
+    height: 25px;
+    /* background-color: beige; */
+    position: relative;
+    top: -170%;
+    left: 33%;
+}
+.everycity{
+    font-size: 15px;
+    color: rgb(250, 246,248);
+}
+.select1{
+    width: 230px;
+    height:35px;
+    /* border: 1px solid pink; */
+    color: gray;
+    position: relative;
+    display: block;
+    top: -160%;
+    left: 10%;    
+    -webkit-appearance: none;
+    background-image:url(img/12.png);
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    font-size: 15px;
+}
+.select2{
+    width: 230px;
+    height:35px;
+    /* border: 1px solid pink; */
+    color: gray;
+    position: relative;
+    display: block;
+    top: -170%;
+    left: 30%;    
+    -webkit-appearance: none;
+    background-image:url(img/12.png);
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    font-size: 15px;
+}
+.select3{
+    width: 230px;
+    height:35px;
+    /* border: 1px solid pink; */
+    color: gray;
+    position: relative;
+    display: block;
+    top: -180%;
+    left: 50%;    
+    -webkit-appearance: none;
+    background-image:url(img/12.png);
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    font-size: 15px;
+}
+.search1{
+    width: 230px;
+    height: 30px;
+    background-color: rgb(191, 78, 72);
+    color: white;
+    position: relative;
+    display: block;
+    top: -190%;
+    left: 70%; 
+    cursor: pointer;
+    transition: all 2s;
+}
+.searchletter{
+    font-size: 16px;
+    line-height: 30px;
+    position: relative;
+    left: 35%;  
+}
+.search1:hover{
+    background-color:white;
+    color:rgb(191, 78, 72);
+    transition: all 1.5s;
+}
+.top6{
+    width: 100%;
+    height: 600px;
+    background-color: rgb(247, 247, 247);
+    position: relative;
+    top: -3.2%;
+}
+.top6-1{
+    width: 220px;
+    height: 330px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    top: 20%;
+    left: 10%;
+    overflow: hidden;
+    transition: all 2s;
+    border: 0.5px solid rgb(223, 223, 223);
+}
+.draw1{
+    position: relative;
+    left: 4%;
+    top: 2.5%;
+    overflow: hidden;
+    transition:  all 5s;
+}
+.draw1:hover{
+    transform: scale(2);
+    transition: all 5s;
+    overflow: hidden;
+}
+.peking{
+    position: relative;
+    top: 22%;
+    left: 15.7%;
+}
+.newbig{
+    position: relative;
+    top: 23%;
+    left: 14.7%;
+    font-size: 15px;
+    color: gray;
+}
+.top6-2{
+    width: 220px;
+    height: 330px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    top: -30%;
+    left: 32%;
+    overflow: hidden;
+    transition: all 2s;
+    border: 0.5px solid rgb(223, 223, 223);
+}
+.shanghai{
+    font-size: 25px;
+    position: relative;
+    top: -97%;
+    left: 33%;
+}
+.nightsh{
+    position: relative;
+    top: -95%;
+    left: 35.7%;
+    font-size: 15px;
+    color: gray;
+}
+.top6-3{
+    width: 220px;
+    height: 330px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    top: -106%;
+    left: 54%;
+    overflow: hidden;
+    transition: all 2s;
+    border: 0.5px solid rgb(223, 223, 223);
+}
+.shenzhen{
+    position: relative;
+    top: -103%;
+    left: 59.5%;
+    /* font-size: 15px; */
+    /* color: gray; */
+}
+.newshore{
+    position: relative;
+    top: -103%;
+    left: 57.5%;
+    font-size: 15px;
+    color: gray;
+}
+.top6-4{
+    width: 220px;
+    height: 330px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    top: -168%;
+    left: 76%;
+    overflow: hidden;
+    transition: all 2s;
+    border: 0.5px solid rgb(223, 223, 223);
+}
+.hongkong{
+    position: relative;
+    top: -165%;
+    left: 81%;
+}
+.bigsend{
+    position: relative;
+    top: -165%;
+    left: 79.5%;
+    font-size: 15px;
+    color: gray;
+}
+.top7{
+    width: 100%;
+    height: 567px;
+    background-color: burlywood;
+    position: relative;
+    top: -3.2%;
+}
+.time{
+    width: 950px;
+    height: 567px;
+    /* background-color: bisque; */
+}
+.newworld01{
+    width: 380px;
+    height: 567px;
+    /* background-color: aqua; */
+    position: relative;
+    top: -100%;
+    left: 72.5%;
+}
+.xsj{
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    position: relative;
+    top: -106%;
+    left: 45%;
+}
+.time2{
+    font-size: 180px;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    position: relative;
+    top: -80%;
+    left: 15%;
+}
+.newpeking{
+    font-size: 15px;
+    position: relative;
+    color: white;
+    top: -73%;
+    left: -12%;
+}
+.newpeking1{
+    font-size: 15px;
+    position: relative;
+    color: white;
+    top: -68%;
+    left: -22%;
+}
+.forchange{
+    width: 300px;
+    height: 250px;
+    /* background-color: brown; */
+    /* border: 1px solid black; */
+    position: relative;
+    top: 15%;
+    left: 10%;
+    overflow: hidden;
+}
+li{
+    float: left;
+    list-style: none;
+    position: relative;
+}
+ul{
+    width: 900px;
+    height: 250px;
+    /* animation: flash1 10s ease; */
+}
+.n1{
+    width: 300px;
+    height: 250px;
+    /* background-color: antiquewhite; */
+    /* border: 1px solid black; */
+}
+.inpic{
+    font-size: 20px;
+    position: relative;
+    top: 30%;
+    left: 32%;
+}
+.inpic2{
+    font-size: 20px;
+    position: relative;
+    top: 30%;
+    left: 32%;
+    color: rgb(232, 80,78);
+}
+.page1{
+    color: gray;
+    font-size: 15px;
+    display: inline;
+    position: relative;
+    top: 48%;
+    left: -20%;
+}
+.page2{
+    color: gray;
+    font-size: 15px;
+    display: inline;
+    position: relative;
+    top: 43%;
+    left: 12%;
+}
+.page3{
+    color: gray;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    top: 43%;
+    left: 12%;
+}
+
+#radio1,#radio2,
+#radio3,#radio4,#radio5{
+    display: none;
+    position: relative;
+}
+label{
+    height: 10px;
+    width: 10px;
+    float: left;
+    display: inline-block;
+    border-radius: 15px;
+    margin: 6px;
+    background-color:rgb(255, 255, 255);
+    /* font-family: 微软雅黑;
+    font-size: 1.5em;
+    color:transparent;
+    text-align: center; */
+    cursor: pointer;
+    position: relative;
+    top: 170px;
+    left: 35%;
+    border: 0.5px solid gray;
+    /* transition: all 100s; */
+}
+#radio1:active~.forchange #five{
+    -webkit-animation-name: none;
+    margin-left: 0px;
+}
+#radio2:active~.forchange #five{
+    -webkit-animation-name: none;
+    margin-left: -300px;
+}
+#radio3:active~.forchange #five{
+    -webkit-animation-name: none;
+    margin-left: -600px;
+}
+#radio1:checked~.forchange #five{
+    -webkit-animation-name: none;
+    margin-left: 0px;
+}
+#radio2:checked~.forchange #five{
+    -webkit-animation-name: none;
+    margin-left: -300px;
+}
+#radio3:checked~.forchange #five{
+    -webkit-animation-name: none;
+    margin-left: -600px;
+}
+label:hover{
+    background-color: #424242;
+    transition: all 1s;
+}
+.small{
+    height: 10px;
+    width: 10px;
+    border-radius: 15px;
+    background-color: black;
+    -webkit-animation: flash6 12s ease infinite;
+    position: relative;
+    left: 140px;
+    /* left: 100px; */
+    top: 176px;
+    cursor: pointer;
+}
+.b{
+    width: 10px;
+    height: 10px;
+}
+#radio1:checked~.b .small{
+    margin-left: 0px;
+    transition: all 0.7s;
+}
+#radio2:checked~.b .small{
+    margin-left: 23px;
+    transition: all 0.7s;
+}
+#radio3:checked~.b .small{
+    margin-left: 46px;
+    transition: all 0.7s;
+}
+#radio1:active~.b .small{
+    margin-left: 0px;
+    transition: all 0.7s;
+}
+#radio2:active~.b .small{
+    margin-left: 23px;
+    transition: all 0.7s;
+}
+#radio3:active~.b .small{
+    margin-left: 45.9px;
+    transition: all 0.7s;
+}
+.moredetails{
+    width: 100px;
+    height: 30px;
+    border:1px solid rgb(232, 80,78);
+    position: relative;
+    top: 18%;
+    left: 32%;
+    cursor: pointer;
+    background-color: white;
+    color: rgb(232, 80,78);
+    transition: all 1s;
+}
+.moreletter{  
+    position: relative;
+    left: 18%;
+    top: -7px;
+    display: inline-block;
+}
+.moredetails:hover{
+    background-color: rgb(232, 80,78);
+    color: white;
+    transition: all 1s;
+}
+.top8{
+    width: 100%;
+    height: 650px;
+    background-color: cadetblue;
+    position: relative;
+    top: -3.19%;
+}
+.top8-1{
+    width: 37.4%;
+    height: 650px;
+    background-color: rgb(231, 79,78);
+}
+.top8-2{
+    width: 37.4%;
+    height: 650px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    left: 33%;
+    top: -650px;
+}
+.newtime{
+    color: white;
+    font-size: 18px;
+    position: relative;
+    top: 36%;
+    left: 36%;
+    display: block;
+}
+.newtime3{
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    position: relative;
+    top: 36%;
+    left: 43%;
+    display: block;
+}
+.newtime2{
+    color: white;
+    font-size: 18px;
+    position: relative;
+    top: 36%;
+    left: 26%;
+    display: block;
+}
+.newtime4{
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    position: relative;
+    top: 36%;
+    left: 33%;
+    display: block;
+}
+.shortline{
+    width: 30px;
+    height: 2px;
+    background-color:rgb(255, 255, 255); 
+    position: relative;
+    top: 41%;
+    left: -8.7%;
+    transition: all 4s;
+    margin: auto;
+    /* display: inline-block; */
+}
+.shortline2{
+    width: 30px;
+    height: 2px;
+    background-color:gray; 
+    position: relative;
+    top: 41%;
+    left: -1.7%;
+    transition: all 4s;
+    margin: auto;
+    /* display: inline-block; */
+}
+.newtime:hover~.shortline,
+.newtime2:hover~.shortline{
+    width: 150px;
+    transition: all 2s;
+}
+.newtime3:hover~.shortline2,
+.newtime4:hover~.shortline2{
+    width: 150px;
+    transition: all 2s;
+}
+.lookmore{
+    width: 150px;
+    height: 35px;
+    border: 1px solid white;
+    position: relative;
+    top: 45%;
+    left: 25%;
+    color: white;
+    cursor: pointer;
+    transition: all 1.5s;
+}
+.lookmore2{
+    width: 150px;
+    height: 35px;
+    border: 1px solid rgb(232, 80,78);
+    position: relative;
+    top: 45%;
+    left: 32%;
+    color: rgb(232, 80,78);
+    cursor: pointer;
+    transition: all 1.5s;
+}
+.lookmore1{  
+    line-height: 35px;
+    font-size: 14.5px;
+    position: relative;
+    left: 30%;
+}
+.lookmore:hover{
+    background-color: white;
+    color: rgb(232, 80,78);
+    transition: all 2s;
+}
+.lookmore2:hover{
+    background-color: rgb(232, 80,78);
+    color: rgb(255, 255, 255);
+    transition: all 2s;
+}
