@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function node(element) {
+        this.element = element;
+        this.next = null;
+        this.pre = null;
+    }
+
+    function List() {
+        this.head = null;
+        this.tail = null;
+        this.find = find;
+        this.insert = insert;
+        this.remove = remove;
+        this.show = show;
+    }
+
+    function find(item) {
+        var current = this.head;
+        while (current.next != null && current.element != item) {
+            current = current.next;
+        }
+        return current;
+    }
+
+    function insert(newElement, item) {
+        var newNode = new node(newElement);
+        var current = this.find(item);
+        newNode.next = current.next;
+        current.next = newNode;
+    }
+</script>
+
+</html>
