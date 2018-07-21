@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function Node(data, left, right) {
+        this.data = data;
+        this.left = left;
+        this.right = right;
+        this.show = show;
+    }
+
+    function show() {
+        return this.data;
+    }
+
+    function Tree() {
+        this.root = null;
+        this.insert = insert;
+        this.find = find;
+        this.getMin = getMin;
+        this.getMax = getMax;
+        this.deletely = deletely;
+        this.dele = dele;
+    }
+
+    function insert(data) {
+        var n = new Node(data, null, null);
+        if (this.root == null) {
+            this.root = n;
+        } else {
+            var current = this.root;
+            while (true) {
+                if (data < current.data) {
+                    if (current.left == null) {
+                        current.left = n;
+                        break;
+                    } else {
+                        current = current.left;
+                    }
+                } else {
+                    if (current.right == null) {
+                        current.right = n;
+                        break;
+                    } else {
+                        current = current.right;
+                    }
+                }
+            }
+        }
+    }
+
+    function preOrder(node) {
+        if (node) {
+            console.log(node.show());
+            preOrder(node.left);
+            preOrder(node.right);
+        }
+    }
+
+    function midOrder(node) {
+        if (node) {
+            midOrder(node.left);
+            console.log(node.show());
+            midOrder(node.right)
+        }
+    }
+
+    function behOrder(node) {
+        if (node) {
+            midOrder(node.left);
+            midOrder(node.right);
+            console.log(node.show());
+        }
+    }
+
+    function dele(node, data) {
+        if (node == null) {
+            return null;
+        }
+        if (data == node.data) {
+            if (node.left == null && node.right == null) {
+                return null;
+            }
+            if (node.left == null) {
+                return node.right
+            }
+            if (node.right == null) {
+                return node.left;
+            }
+            if (node.right != null && node.left != null) {
+                var tempNode = getSmallest(node.right);
+                node.data = tempNode.data;
+                node.right = dele(node.right, tempNode);
+                return node;
+            }
+        } else if (data < node.data) {
+            node.left = dele(node.left, data);
+            return node;
+        } else {
+            node.right = dele(node.right, data);
+            return node;
+        }
+    }
+
+    function deletely(node) {
+        root = dele(this.root, node);
+    }
+
+    function getMax() {
+        var current = this.root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        return current.data;
+    }
+
+    function getMin(node) {
+        var current = this.root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        return current.data;
+    }
+
+    function getSmallest(node) {
+        while (node.left != null) {
+            node = node.left;
+        }
+        return node;
+    }
+
+    function find(data) {
+        var current = this.root;
+        while (current != null) {
+            if (current.data == data) {
+                return current;
+            } else if (current.data > data) {
+                current = current.left;
+            } else {
+                current = current.right;
+            }
+        }
+        return null;
+    }
+
+    function unPreorder() {
+        var result = [];
+        var stack = [];
+        var p = node;
+        while (stack.length != 0 || p != null) {
+            if (p != null) {
+                stack.push(p);
+                result.push(p.data);
+                p = p.left;
+                console.log(stack);
+                console.log(result);
+            } else {
+                var node = stack.pop();
+                p = node.right;
+            }
+        }
+    }
+
+    function unMidorder() {
+        var result = [];
+        var stack = [];
+        var p = node;
+        while (stack.length != 0 || p != null) {
+            if (p != null) {
+                stack.push(p);
+                p = p.left;
+            } else {
+                var node = stack.pop();
+                result.push(node.data);
+                p = node.right;
+            }
+        }
+        console.log(result);
+    }
+
+    function unBeorder(node) {
+        var result = [];
+        var stack = [];
+        var p = node;
+        while (stack.length != 0 || p != null) {
+            if (p != null) {
+                stack.push(p);
+                result.unshift(p.data);
+                p = p.right;
+            } else {
+                var node = stack.pop();
+                p = node.left;
+            }
+        }
+        console.log(result);
+    }
+</script>
+
+</html>
