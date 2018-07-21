@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function Node(element) {
+        this.element = element;
+        this.next = null;
+        this.previous = null;
+    }
+
+    function LList() {
+        this.head = new Node('head');
+        this.find = find;
+        this.insert = insert;
+        this.pre_insert = pre_insert;
+        this.remove = remove;
+        this.display = display;
+    }
+
+    function find(item) {
+        var currNode = this.head;
+        while (currNode.element != item) {
+            currNode = currNode.next;
+        }
+        return currNode;
+    }
+
+
+    function insert(newElement, item) {
+        var newNode = new Node(newElement);
+        var currNode = this.find(item);
+        newNode.next = currNode.next;
+        newNode.previous = currNode;
+        currNode.next = newNode;
+    }
+
+    function pre_insert(newElement, item) {
+        var newNode = new Node(newElement);
+        var currNode = this.find(item);
+        newNode.next = currNode;
+        newNode.previous = currNode.previous.previous;
+        currNode.previous.next = newNode;
+    }
+
+    function display() {
+        var currNode = this.head;
+        while (currNode.next != null) {
+            console.log(currNode.next.element);
+            currNode = currNode.next;
+        }
+    }
+
+
+    function remove(item) {
+        var currNode = this.find(item);
+        if (currNode.next != null) {
+            currNode.previous.next = currNode.next;
+            currNode.next.previous = currNode.previous;
+            currNode.next = null;
+            currNode.previous = null;
+        }
+    }
+
+    var fruits = new LList();
+
+    fruits.insert('a', 'head');
+    fruits.insert('b', 'a');
+    fruits.insert('c', 'b');
+    fruits.insert('d', 'c');
+    fruits.display();
+    console.log('---------------');
+    fruits.remove('b')
+    fruits.display();
+    console.log('---------------');
+    fruits.pre_insert('ee', 'c');
+    fruits.display();
+    console.log('---------------');
+    fruits.insert('ll', 'c');
+    fruits.display();
+</script>
+
+</html>
