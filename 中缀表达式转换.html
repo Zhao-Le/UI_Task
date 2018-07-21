@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+        margin: auto auto;
+        /* background-image: url(img/Marbl.jpg); */
+        border-radius: 20px;
+    }
+    
+    td {
+        width: 150px;
+        height: 70px;
+    }
+    
+    .button {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(253, 175, 175);
+        opacity: 0.55;
+        font-size: 40px;
+        border-radius: 80px;
+        outline: none;
+        border: none;
+        transition: all 1s;
+    }
+    
+    .AG:hover,
+    .button:hover {
+        background-color: rgb(255, 208, 208);
+        transition: all 1s;
+        outline: none;
+    }
+    
+    .AG {
+        width: 300px;
+        height: 80px;
+        background-color: rgb(253, 175, 175);
+        opacity: 0.55;
+        font-size: 40px;
+        border-radius: 30px;
+        border: none;
+        outline: none;
+        transition: all 1s;
+    }
+    
+    .txt {
+        width: 600px;
+        height: 50px;
+        border-radius: 15px;
+        line-break: 100px;
+        font-size: 30px;
+        text-align: right;
+        border: none;
+    }
+    
+    #div1 {
+        width: 300px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        text-align: center;
+        position: relative;
+        left: 200px;
+        top: -600px;
+        background-color: aqua;
+    }
+</style>
+
+<body>
+    <table>
+        <tr>
+            <td colspan="6"><input type="text" class="txt" disabled></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" class="AG" value="AC"></td>
+            <td colspan="2"><input type="button" class="AG" value="DEL"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="button" value="7"></td>
+            <td><input type="button" class="button" value="8"></td>
+            <td><input type="button" class="button" value="9"></td>
+            <td><input type="button" class="button" value="*"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="button" value="4"></td>
+            <td><input type="button" class="button" value="5"></td>
+            <td><input type="button" class="button" value="6"></td>
+            <td><input type="button" class="button" value="/"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="button" value="1"></td>
+            <td><input type="button" class="button" value="2"></td>
+            <td><input type="button" class="button" value="3"></td>
+            <td><input type="button" class="button" value="-"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="button" value="0"></td>
+            <td><input type="button" class="button" value="."></td>
+            <td><input type="button" class="button" value="+"></td>
+            <td><input type="button" class="button" value="mid-beh" style="font-size: 18px;"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="button" value="("></td>
+            <td><input type="button" class="button" value=")"></td>
+            <td><input type="button" class="button" value="be_cal" style="font-size: 18px;"></td>
+            <td><input type="button" class="button" value="mid_cal" style="font-size: 18px;"></td>
+        </tr>
+    </table>
+</body>
+<script>
+    var sign = new Array();
+    // +   -   *    /    (    )   #
+    sign[0] = new Array('1', '1', '-1', '-1', '-1', '1', '1'); //+
+    sign[1] = new Array('1', '1', '-1', '-1', '-1', '1', '1'); //-
+    sign[2] = new Array('1', '1', '1', '1', '-1', '1', '1'); //*
+    sign[3] = new Array('1', '1', '1', '1', '-1', '1', '1'); ///
+    sign[4] = new Array('-1', '-1', '-1', '-1', '-1', '0', ''); //(
+    sign[5] = new Array('1', '1', '1', '1', '', '1', '1'); //)
+    sign[6] = new Array('-1', '-1', '-1', '-1', '-1', '', '0'); //#
+
+    function flag(a, b) {
+        var str = ['+', '-', '*', '/', '(', ')', '#'];
+        var str1;
+        var str2;
+        for (var i = 0; i < 7; i++) {
+            if (a == str[i]) {
+                str1 = i;
+            }
+            if (b == str[i]) {
+                str2 = i;
+            }
+        }
+        var count = sign[str1][str2];
+        return count;
+    }
+
+    function Turn(item) {
+        var sign = [];
+        var result = [];
+        sign.push("#");
+        for (var i = 0; i < item.length; i++) {
+            if (!isNaN(parseInt(item[i]))) {
+                result.push(parseInt(item[i]));
+            } else {
+                if (item[i] == '(') {
+                    sign.push(item[i]);
+                } else if (item[i] == ')') {
+                    while (sign[sign.length - 1] != '(') {
+                        result.push(sign.pop());
+                    }
+                    sign.pop();
+                } else {
+                    var compare = flag(sign[sign.length - 1], item[i])
+                    if (compare == -1) {
+                        sign.push(item[i]);
+                    } else if (compare >= 0) {
+                        do {
+                            result.push(sign.pop());
+                        } while (flag(sign[sign.length - 1], item[i]) > 0);
+                        sign.push(item[i]);
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    function calculate(result) {
+        var forcal = [];
+        for (var i = 0; i < result.length; i++) {
+            if (!isNaN(result[i])) {
+                forcal.push(result[i]);
+            } else {
+                var b = forcal.pop();
+                var a = forcal.pop();
+                switch (result[i]) {
+                    case '+':
+                        forcal.push(a + b);
+                        break;
+                    case '-':
+                        forcal.push(a - b);
+                        break;
+                    case '*':
+                        forcal.push(a * b);
+                        break;
+                    case '/':
+                        forcal.push(a / b);
+                        break;
+                }
+            }
+        }
+        return forcal[0];
+    }
+
+
+    window.onload = function() {
+        var way_res = [];
+        var button_txt = document.getElementsByClassName("button");
+        var txt = document.getElementsByClassName("txt")[0];
+        var button_way = document.getElementsByClassName("AG");
+        for (var i = 0; i < button_way.length; i++) {
+            button_way[i].onclick = function() {
+                if (this.value == "AC") {
+                    way_res = [];
+                    txt.value = "";
+                } else {
+                    txt.value = txt.value.substr(0, txt.value.length - 1);
+                }
+            }
+        }
+
+        var arr = []; //定义全局变量储存后缀表达式数组
+        for (var i = 0; i < button_txt.length; i++) {
+            button_txt[i].onclick = function() {
+                if (txt.value == "" && this.value == ".") {
+                    txt.value = "0.";
+                } else {
+                    if (!isNaN(this.value) || this.value == ".") {
+                        if (txt.value.indexOf(".") != -1) {
+                            if (this.value != ".") {
+                                txt.value += this.value;
+                            }
+                        } else {
+                            txt.value += this.value;
+                        }
+                    } else {
+                        if (this.value != "mid-beh" && this.value != "be_cal" && this.value != "mid_cal") {
+                            // way_res[way_res.length] = txt.value;
+                            // way_res[way_res.length] = this.value;
+                            txt.value += this.value;
+                        } else if (this.value == "mid-beh") {
+                            var div1 = document.createElement("input");
+                            div1.id = "div1";
+                            document.body.appendChild(div1);
+                            div1.value = txt.value;
+                            way_res[way_res.length] = txt.value;
+                            console.log(way_res);
+                            console.log('!!!');
+                            if (way_res[1] == "/") {
+                                if (way_res[2] == 0) {
+                                    alert("垃圾，数学是体育老师教的？");
+                                } else {
+                                    way_res.push('#');
+                                    console.log(Turn(way_res.join("")));
+                                    txt.value = Turn(way_res.join(""));
+                                }
+                            } else {
+                                console.log(way_res);
+                                console.log('-----');
+                                way_res.push('#');
+                                console.log(Turn(way_res.join("")));
+                                txt.value = Turn(way_res.join(""));
+                                arr = Turn(way_res.join(""));
+                                console.log(arr);
+                                way_res = [];
+                            }
+                        } else if (this.value == "be_cal") {
+                            txt.value = calculate(arr);
+                        } else if (this.value == 'mid_cal') {
+                            txt.value = eval(txt.value);
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+</html>
