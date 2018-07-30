@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 冒泡排序
+    // function bubbleSort(arr) {
+    //     var i = arr.length,
+    //         j;
+    //     var temp;
+    //     while (i > 0) {
+    //         for (j = 0; j < i - 1; j++) {
+    //             if (arr[j] > arr[j + 1]) {
+    //                 temp = arr[j];
+    //                 arr[j] = arr[j + 1];
+    //                 arr[j + 1] = temp;
+    //             }
+    //         }
+    //         i--;
+    //     }
+    //     return arr;
+    // }
+
+    var arr = [3, 2, 4, 9, 1, 5, 7, 6, 8];
+    var arrSorted = bubbleSort(arr);
+    console.log(arrSorted);
+
+    //选择排序
+    function arrSort3(arr) {
+        var len = arr.length,
+            minIndex, temp;
+        for (var i = 0; i < len - 1; i++) {
+            minIndex = i;
+            for (var j = i + 1; j < len; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+
+        }
+        return arr;
+    }
+    var arr1 = [23, 2, 45, 6, 54, 1, 0, 3];
+    console.log(arrSort3(arr1));
+
+    //插入排序
+    function plugin(a) {
+        for (var i = 0; i < a.length; i++) {
+            var number = a[i];
+            var index = i - 1;
+            while (index != -1 && a[index] > number) {
+                a[index + 1] = a[index];
+                index--;
+            }
+            a[index + 1] = number;
+            console.log(a);
+        }
+        return a;
+    }
+    var arr2 = [-1, 2, 45, 6, 54, 1, 0, 3];
+    console.log(plugin(arr2));
+</script>
+
+</html>
