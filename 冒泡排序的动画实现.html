@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #listUl {
+            overflow: hidden;
+            list-style: none;
+            padding: 0px;
+            margin: 2px;
+        }
+        
+        #listUl li {
+            position: relative;
+            float: left;
+            width: 25px;
+            height: 200px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .newLi-span {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            background-color: red;
+            color: rgba(0, 0, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <input id="listInput" type="text">
+    <span class="inputBtn" onclick="inn()">
+        <button id="leftIn" onclick="inn()">左侧插入</button>
+        <button id="rightIn" onclick="inn()">右侧插入</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+    <button id="bubbleSortBtn">冒泡排序</button>
+    <ul id="listUl"></ul>
+    <script>
+        var listInput = document.getElementById("listInput");
+        var listUl = document.getElementById("listUl");
+        var inputBtn = document.querySelector(".inputBtn");
+        // var bubbleSortBtn = document.getElementById("bubbleSortBtn");
+        var liCount = listUl.length;
+
+        //冒泡排序
+        function bubbleSort(domList, j) {
+            var temp = null;
+            if (domList[j].innerText >= domList[j + 1].innerText) {
+                domList[j].childNodes[0].style.backgroundColor = "#800000";
+                domList[j + 1].childNodes[0].style.backgroundColor = "red";
+                temp = domList[j].innerHTML;
+                domList[j].innerHTML = domList[j + 1].innerHTML;
+                domList[j + 1].innerHTML = temp;
+
+            } else {
+                domList[j].childNodes[0].style.backgroundColor = "red";
+                domList[j + 1].childNodes[0].style.backgroundColor = "#800000";
+            }
+        }
+        //排序可视化
+        function draw(domList) {
+            var i = 0;
+            var j = 0;
+            var drawSI = setInterval(function() {
+                bubbleSort(domList, j);
+                j++;
+                // if (j == domList.length - i - 1 && i < domList.length) {
+                if (j == domList.length - i - 1 && i < domList.length) {
+                    domList[domList.length - i - 1].childNodes[0].style.backgroundColor = "red";
+                    j = 0;
+                    i++;
+                }
+                if (i == domList.length - 1) {
+                    clearInterval(drawSI);
+                }
+            }, 500);
+        }
+
+        function operation(buttonId) {
+            var listUl_lis = listUl.getElementsByTagName("li");
+            if (buttonId == "leftIn" || buttonId == "rightIn") {
+                var listInputText = listInput.value;
+                if (isNaN(listInputText)) {
+                    return alert("不是数字！");
+                }
+                if (listInputText == "") {
+                    return alert("请输入数字！");
+                }
+                var newLi = document.createElement("li");
+                newLi.innerHTML = "<span class='newLi-span' style='height: " + listInputText * 10 + "px;'>" + listInputText + "</span>";
+
+                if (buttonId == "leftIn") {
+                    listUl.insertBefore(newLi, listUl.childNodes[0]);
+                    listInput.value = "";
+                } else if (buttonId == "rightIn") {
+                    listUl.appendChild(newLi);
+                    listInput.value = "";
+                }
+            } else {
+                if (listUl_lis.length == 0) {
+                    return alert("列表为空！");
+                }
+            }
+        }
+
+        function inn(e) {
+            console.log("*******");
+            if (e.target.nodeName == 'BUTTON') {
+                operation(e.target.id);
+            }
+        }
+        inputBtn.addEventListener("click", function(e) {
+            if (e.target.nodeName == 'BUTTON') {
+                operation(e.target.id);
+            }
+        }, false);
+
+        bubbleSortBtn.addEventListener("click", function() {
+            draw(listUl.childNodes);
+        });
+    </script>
+</body>
+
+</html>
