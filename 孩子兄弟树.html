@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var a;
+
+    function Tree() {
+        this.root = new Node("root");
+        this.insert = insert;
+        this.find = find;
+        this.dele = dele;
+        this.show = show;
+        this.travel = travel;
+    }
+
+    function Node(element) {
+        this.element = element;
+        this.child = null;
+        this.bro = null;
+        this.parent = null;
+    }
+
+    function insert(root, newElement) {
+        var n = new Node(newElement);
+        var node = this.find(root);
+        n.parent = node;
+        if (node.child == null) {
+            node.child = n;
+        } else {
+            node = node.child;
+            while (node.bro) {
+                node = node.bro;
+            }
+            node.bro = n;
+        }
+    }
+
+    function travel(node) {
+        if (node) {
+            travel(node.child);
+            console.log(node.element);
+            travel(node.bro);
+        }
+        return node;
+    }
+
+    function find(element) {
+        var tro = this.root;
+        a = null;
+        findtravel(tro, element);
+        return a;
+    }
+
+    function findtravel(node, element) {
+        if (node != null && node.element != element) {
+            findtravel(node.child, element);
+            findtravel(node.bro, element);
+        } else if (node != null && node.element == element) {
+            a = node;
+        }
+    }
+
+    function dele(element) {
+        var node = this.find(element);
+        var parentnode = this.find(node.parent.element);
+        if (parentnode.child.element == element) {
+            parentnode.child = node.bro;
+        } else {
+            parentnode = parentnode.child;
+            while (parentnode.bro.element != element) {
+                parentnode = parentnode.bro;
+            }
+            parentnode.bro = node.bro;
+        }
+    }
+
+    function show(element) {
+        var node = this.find(element);
+        if (node.child) {
+            console.log("The child is: " + node.child.element);
+            node = node.child;
+            while (node.bro) {
+                console.log("The bro is: " + node.bro.element);
+                node = node.bro;
+            }
+        } else
+            console.log("no child");
+    }
+    var c = new Tree();
+    c.insert("root", 1);
+    c.insert(1, 2);
+    c.insert(1, 3);
+    c.insert(2, 4);
+    c.insert(2, 5);
+    c.insert(3, 6);
+    c.insert(3, 7);
+    c.insert(4, 8);
+    c.show(3);
+    console.log("--------------");
+    c.show(1);
+    console.log("--------------");
+    c.travel(a);
+    console.log("--------------");
+    var b = c.find(2);
+    console.log(b);
+    console.log("--------------");
+    c.dele(4);
+    c.show(1);
+    c.travel(a);
+</script>
+
+</html>
