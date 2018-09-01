@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var arr = [2, 1, 5, 4, 7, 9, 4, 1, 2, 6, 8, 2];
+    var obj = {},
+        newArr = [],
+        len = arr.length,
+        val,
+        type;
+    for (var i = 0; i < len; i++) {
+        val = arr[i];
+        type = typeof val;
+        if (!obj[val]) {
+            obj[val] = type;
+            newArr.push(val);
+        } else if (obj[val].indexOf(type) < 0) {
+            obj[val] = type;
+            newArr.push(val);
+        }
+    }
+    console.log(newArr);
+</script>
+
+</html>
